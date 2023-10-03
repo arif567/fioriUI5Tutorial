@@ -1,0 +1,16 @@
+<mvc:View controllerName="fioriui5.tutorial.controller.ProductsView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>titleProducts}">
+        <Page id="Products" title="Available Products">
+            <content>
+                <List items="{/Products}">
+                    <StandardListItem type="Navigation" press="handleListItemPress" title="{ProductName}">
+
+                    </StandardListItem>
+                    
+                </List>
+            </content>
+        </Page>
+    </Page>
+</mvc:View>

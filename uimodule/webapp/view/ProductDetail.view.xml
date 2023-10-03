@@ -1,0 +1,13 @@
+<mvc:View controllerName="fioriui5.tutorial.controller.ProductDetail"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page id="ProductDetail" title="Deatil Page">
+        <VBox>
+            <Text text="{ProductName}"></Text>
+            <Text text="{UnitPrice}"></Text>
+            <Text text="{QuantityPerUnit}"></Text>
+            <Text text="{UnitsInStock}"></Text>
+        </VBox>
+    </Page>
+</mvc:View>

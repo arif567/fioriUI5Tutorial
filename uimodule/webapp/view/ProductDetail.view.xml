@@ -1,13 +1,42 @@
 <mvc:View controllerName="fioriui5.tutorial.controller.ProductDetail"
     displayBlock="true"
     xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
-    <Page id="ProductDetail" title="Deatil Page">
-        <VBox>
-            <Text text="{ProductName}"></Text>
-            <Text text="{UnitPrice}"></Text>
-            <Text text="{QuantityPerUnit}"></Text>
-            <Text text="{UnitsInStock}"></Text>
-        </VBox>
-    </Page>
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:uxap="sap.uxap"
+    xmlns:layout="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form">
+
+    <uxap:ObjectPageLayout id="ProductDetail">
+        <uxap:headerTitle>
+            <uxap:ObjectPageHeader id="headerForTest" objectTitle="{ProductName}" objectSubtitle="{ProductID}">
+            <uxap:actions>
+                <uxap:ObjectPageHeaderActionButton id="buttonCart" icon="sap-icon://cart-4" press="addToCart" tooltip="Add to cart"></uxap:ObjectPageHeaderActionButton>
+                <uxap:ObjectPageHeaderActionButton id="buttonFav" icon="sap-icon://unfavorite" press="markAsFav" tooltip="Mark as favorite"></uxap:ObjectPageHeaderActionButton>
+            </uxap:actions>
+        </uxap:ObjectPageHeader>
+        </uxap:headerTitle>
+
+        <uxap:headerContent>
+
+           <layout:VerticalLayout >
+            <Label id="labelUnits" text="Units in Stock"></Label>
+            <ObjectAttribute id="attrUnits" text="{UnitsInStock}"></ObjectAttribute>
+           </layout:VerticalLayout>
+
+           <layout:VerticalLayout >
+            <Label id="labelOrder" text="Units on Order"></Label>
+            <ObjectAttribute id="attrOrder" text="{UnitsOnOrder}"></ObjectAttribute>
+           </layout:VerticalLayout>
+
+           <layout:VerticalLayout >
+            <Label id="labelState" text="Discontinued"></Label>
+            <ObjectAttribute id="attrState" text="{= ${discontinued} ? 'Yes' : 'No' }"></ObjectAttribute>
+           </layout:VerticalLayout>
+
+        </uxap:headerContent>
+
+
+    </uxap:ObjectPageLayout>
+
+    
 </mvc:View>
